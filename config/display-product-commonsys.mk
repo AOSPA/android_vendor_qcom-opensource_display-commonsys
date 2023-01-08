@@ -15,7 +15,12 @@ SOONG_CONFIG_qtiunifeddraw := qtiunifeddraw_enabled
 # Soong Values
 SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := false
 SOONG_CONFIG_qtiunifeddraw_qtiunifeddraw_enabled := true
+SOONG_CONFIG_qtidisplay_gralloc_handle_has_no_reserved_size := false
 
 ifeq ($(call is-vendor-board-platform,QCOM),true)
     SOONG_CONFIG_qtidisplaycommonsys_displayconfig_enabled := true
+endif
+
+ifeq ($(TARGET_GRALLOC_HANDLE_HAS_NO_RESERVED_SIZE),true)
+    SOONG_CONFIG_qtidisplay_gralloc_handle_has_no_reserved_size := true
 endif
