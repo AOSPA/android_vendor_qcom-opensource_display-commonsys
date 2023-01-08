@@ -1,5 +1,27 @@
+soong_config_module_type {
+    name: "qti_qdmetadata_cc_defaults",
+    module_type: "cc_defaults",
+    config_namespace: "qti_qdmetadata",
+    bool_variables: [
+        "gralloc_handle_has_reserved_size",
+    ],
+    properties: [
+        "cflags",
+    ],
+}
+
+qti_qdmetadata_cc_defaults {
+    name: "qti_qdmetadata_defaults",
+    soong_config_variables: {
+        gralloc_handle_has_reserved_size: {
+            cflags: ["-DGRALLOC_HANDLE_HAS_RESERVED_SIZE"],
+        },
+    },
+}
+
 cc_library_shared {
     name: "libqdMetaData.system",
+    defaults: ["qti_qdmetadata_defaults"],
     system_ext_specific: true,
     cflags: [
         "-Wno-sign-conversion",
