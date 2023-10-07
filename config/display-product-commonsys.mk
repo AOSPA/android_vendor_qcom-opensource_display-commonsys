@@ -8,7 +8,7 @@ PRODUCT_PACKAGES += libdisplayconfig.system \
 
 SOONG_CONFIG_NAMESPACES += qtidisplaycommonsys
 # Soong Keys
-SOONG_CONFIG_qtidisplaycommonsys := displayextension composer3ext
+SOONG_CONFIG_qtidisplaycommonsys := displayextension composer3ext gralloc_handle_has_no_ubwcp
 # Soong Values
 
 # displayextension controls global compile time disablement of SF extensions
@@ -25,3 +25,8 @@ ifeq ($(call is-vendor-board-platform,QCOM),true)
     SOONG_CONFIG_qtidisplaycommonsys_displayextension := true
     SOONG_CONFIG_qtidisplaycommonsys_composer3ext := true
 endif
+
+ifeq ($(TARGET_GRALLOC_HANDLE_HAS_NO_UBWCP),true)
+    SOONG_CONFIG_qtidisplaycommonsys_gralloc_handle_has_no_ubwcp := true
+endif
+
