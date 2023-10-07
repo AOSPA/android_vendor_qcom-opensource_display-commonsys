@@ -21,7 +21,6 @@ SOONG_CONFIG_qtidisplaycommonsys_displayextension := false
 # properties
 SOONG_CONFIG_qtidisplaycommonsys_composer3ext := false
 
-
 ifeq ($(call is-vendor-board-platform,QCOM),true)
     SOONG_CONFIG_qtidisplaycommonsys_displayextension := true
     SOONG_CONFIG_qtidisplaycommonsys_composer3ext := true
