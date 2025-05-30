@@ -7,7 +7,7 @@ soong_config_module_type {
         "gralloc_handle_has_no_ubwcp",
     ],
     properties: [
-        "cflags",
+        "export_cflags",
     ],
 }
 
@@ -15,10 +15,10 @@ qtidisplaycommonsys_cc_defaults {
     name: "qtidisplaycommonsys_defaults",
     soong_config_variables: {
         gralloc_handle_has_no_custom_content_md_reserved_size: {
-            cflags: ["-DGRALLOC_HANDLE_HAS_NO_CUSTOM_CONTENT_MD_RESERVED_SIZE"],
+            export_cflags: ["-DGRALLOC_HANDLE_HAS_NO_CUSTOM_CONTENT_MD_RESERVED_SIZE"],
         },
         gralloc_handle_has_no_ubwcp: {
-            cflags: ["-DGRALLOC_HANDLE_HAS_NO_UBWCP"],
+            export_cflags: ["-DGRALLOC_HANDLE_HAS_NO_UBWCP"],
         },
     },
 }
